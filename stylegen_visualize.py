@@ -62,7 +62,7 @@ def interactive_stylegen(name):
     axgenu = plt.axes([0.55, 0.01, 0.20, 0.06])
     bgenu = widgets.Button(axgenu, 'New upper styles')
     axslider = plt.axes([0.20, 0.90, 0.65, 0.03])
-    cutoffslider = widgets.Slider(axslider, 'Style cutoff', 1, 10, valinit=initial_cutoff, valstep=1)
+    cutoffslider = widgets.Slider(axslider, 'Style cutoff', 1, 9, valinit=initial_cutoff, valstep=1)
 
     def gen_lower(event):
         container.gen_lower_styles()
