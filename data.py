@@ -91,4 +91,5 @@ if __name__ == '__main__':
     plt.imshow(
         utils.make_torch_grid(batch[0].to(device))
     )
+    plt.savefig('out/data.png', bbox_inches='tight', pad_inches=0)
     plt.show()

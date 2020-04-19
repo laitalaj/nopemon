@@ -64,6 +64,9 @@ def disc_r1_regularizer(real_in, real_out, gamma=10):
     penalty = (grads ** 2).sum(dim=(1, 2, 3))
     return .5 * gamma * penalty.mean()
 
+def im_to_numpy(im):
+    return (np.transpose(im.cpu(), (1, 2, 0)) + 1) / 2
+
 def make_torch_grid(imgs):
     return np.transpose(
         tvu.make_grid(imgs, padding=1, normalize=True).cpu(),
