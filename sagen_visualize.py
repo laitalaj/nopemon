@@ -110,7 +110,7 @@ def interactive_sagenerator(name):
     plt.show()
 
 if __name__ == '__main__':
-    name = '30epoch/sa_gen.pt'
+    name = 'sa_gen.pt'
     static = False
 
     if static:
