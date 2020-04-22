@@ -119,6 +119,7 @@ class SynthesisNetwork(nn.Module):
         ])
 
         self.torgb = RGBBlock(self.nz, 32)
+        self.activation = nn.Tanh()
     
     def forward(self, styles):
         batch_size = styles.shape[0]
@@ -130,7 +131,7 @@ class SynthesisNetwork(nn.Module):
             x = block(x, style)
         
         rgb = self.torgb(x, styles[-1])
-        return rgb
+        return self.activation(rgb)
 
 class StyleGenerator(nn.Module):
     nz = 256

@@ -110,7 +110,7 @@ def interactive_sagenerator(name):
     plt.show()
 
 if __name__ == '__main__':
-    name = '20epoch/sa_gen.pt'
+    name = '30epoch/sa_gen.pt'
     static = False
 
     if static:
@@ -123,5 +123,5 @@ if __name__ == '__main__':
             torch.manual_seed(seed)
             visualize_sagenerator(name, f'out/sa_{seed}_visualized.png', locations=locs)
     else:
-        torch.manual_seed(42)
+        torch.manual_seed(3)
         interactive_sagenerator(name)

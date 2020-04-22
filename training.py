@@ -129,8 +129,8 @@ if __name__ == '__main__':
 
     disc = discriminator.Discriminator().to(device)
 
-    name, gen = 'dcnn', dcgenerator.DCNNGenerator().to(device)
+    #name, gen = 'dcnn', dcgenerator.DCNNGenerator().to(device)
     #name, gen = 'sa', sagenerator.SelfAttentionGenerator().to(device)
-    #name, gen = 'style', stylegenerator.StyleGenerator().to(device)
+    name, gen = 'style', stylegenerator.StyleGenerator().to(device)
 
     train(name, gen, disc, gen_train_ratio = 1, epochs=30)

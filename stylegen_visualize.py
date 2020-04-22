@@ -47,9 +47,12 @@ def interactive_stylegen(name):
             if generate: self.generate()
         def generate(self):
             result = self.gen(self.a, self.b, self.cutoff).detach()[0]
+            '''
             offset = result.min()
             scale = result.max() - offset
             self.result = utils.im_to_numpy(result, -offset, scale)
+            '''
+            self.result = utils.im_to_numpy(result)
 
     gen, device = load_stylegen(name)
     container = StyleGenContainer(gen, device, initial_cutoff)
@@ -87,11 +90,12 @@ def interactive_stylegen(name):
     plt.show()
 
 if __name__ == '__main__':
-    name = '20epoch/style_gen.pt'
+    name = 'style_gen.pt'
     static = False
 
     if static:
         torch.manual_seed(69)
         visualize_stylegenerator(name, 'out/style_visualized.png')
     else:
+        torch.manual_seed(3)
         interactive_stylegen(name)
