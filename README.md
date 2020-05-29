@@ -6,6 +6,15 @@ Part of the Seminar on Computer Vision,
 University of Helsinki,
 2020.
 
+## What's this?
+
+I got Generative Adversarial Networks as the subject for my seminar report,
+and I decided to pit two advanced GAN generator architectures agains each other,
+using a tried-and-true DCNN as the baseline.
+The seminar report,
+with a bunch of images, explanation and results,
+is available [here](http://julius.laita.la/pdfs/nopemon).
+
 ## Disclaimer
 
 The code is still quite messy.
